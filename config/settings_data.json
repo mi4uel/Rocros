@@ -1,8 +1,17 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
-    "logo": "shopify:\/\/shop_images\/Logo_ROC_ROS_r_pantalla_pago_f547977b-27e7-42d7-a003-d15a3ba1333e.svg",
+    "logo": "shopify://shop_images/Logo_ROC_ROS_r_pantalla_pago_f547977b-27e7-42d7-a003-d15a3ba1333e.svg",
     "logo_width": 150,
-    "favicon": "shopify:\/\/shop_images\/ROS_favicon.svg",
+    "favicon": "shopify://shop_images/ROS_favicon.svg",
     "type_header_font": "courier_new_n7",
     "heading_scale": 110,
     "type_body_font": "courier_new_n4",
@@ -99,11 +108,11 @@
     "sale_badge_color_scheme": "scheme-5",
     "sold_out_badge_color_scheme": "scheme-8ad6e124-b494-4862-b7c8-b42d7389560f",
     "brand_headline": "",
-    "brand_description": "<p><\/p>",
+    "brand_description": "<p></p>",
     "brand_image_width": 100,
     "social_facebook_link": "",
-    "social_instagram_link": "https:\/\/www.instagram.com\/rocros\/",
-    "social_youtube_link": "https:\/\/www.youtube.com\/@roc-ros",
+    "social_instagram_link": "https://www.instagram.com/rocros/",
+    "social_youtube_link": "https://www.youtube.com/@roc-ros",
     "social_tiktok_link": "",
     "social_twitter_link": "",
     "social_snapchat_link": "",
@@ -119,7 +128,7 @@
     "show_cart_note": false,
     "cart_drawer_collection": "timeless-collection",
     "cart_color_scheme": "scheme-1",
-    "checkout_logo_image": "shopify:\/\/shop_images\/Logo_ROC_ROS_r_pantalla_pago_f547977b-27e7-42d7-a003-d15a3ba1333e.svg",
+    "checkout_logo_image": "shopify://shop_images/Logo_ROC_ROS_r_pantalla_pago_f547977b-27e7-42d7-a003-d15a3ba1333e.svg",
     "checkout_logo_position": "left",
     "checkout_logo_size": "medium",
     "checkout_input_background_color_mode": "white",
@@ -143,7 +152,7 @@
     "content_for_index": [],
     "blocks": {
       "10583289249535060075": {
-        "type": "shopify:\/\/apps\/basic-wishlist\/blocks\/popup\/1611f065-e251-4250-8609-2fa2f1877c57",
+        "type": "shopify://apps/basic-wishlist/blocks/popup/1611f065-e251-4250-8609-2fa2f1877c57",
         "disabled": true,
         "settings": {
           "icon_width": 40,
@@ -174,12 +183,12 @@
         }
       },
       "855628211100114053": {
-        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
         "settings": {}
       },
       "15683396631634586217": {
-        "type": "shopify:\/\/apps\/inbox\/blocks\/chat\/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
         "disabled": false,
         "settings": {
           "button_color": "#dadada",
@@ -440,7 +449,7 @@
       "sale_badge_color_scheme": "scheme-4",
       "sold_out_badge_color_scheme": "scheme-3",
       "brand_headline": "",
-      "brand_description": "<p><\/p>",
+      "brand_description": "<p></p>",
       "brand_image_width": 100,
       "social_twitter_link": "",
       "social_facebook_link": "",

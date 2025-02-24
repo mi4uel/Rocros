@@ -1,40 +1,67 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "image_banner_Jq9Efz": {
-      "type": "image-banner",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/BANNER_ANILLO_PUNO.jpg",
-        "image_overlay_opacity": 0,
-        "image_height": "adapt",
-        "desktop_content_position": "middle-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
-      }
-    },
-    "image_banner_TUwFgP": {
-      "type": "image-banner",
-      "disabled": true,
-      "custom_css": [
-        ".tu-clase-banner {margin-bottom: 10px;}",
-        ".tu-clase-logo {margin-top: 10px;}"
+    "slideshow_WMCqh4": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_AnTNcq": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/PUNOANILLOARREGLADOV2.jpg",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_rRJKBh": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/DSC02295.jpg",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_AnTNcq",
+        "slide_rRJKBh"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/banner-web.gif",
-        "image_overlay_opacity": 0,
-        "image_height": "adapt",
-        "desktop_content_position": "top-center",
-        "show_text_box": true,
-        "desktop_content_alignment": "center",
-        "color_scheme": "",
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
         "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
+        "show_text_below": false,
+        "accessibility_info": ""
       }
     },
     "image_banner_3gjKXG": {
@@ -44,7 +71,7 @@
         ".tu-clase-logo {margin-top: 10px;}"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Logo_timeless_collection_pie_de_banner_be310c70-1353-4fbb-9581-802ffc26b96d.svg",
+        "image": "shopify://shop_images/Logo_timeless_collection_pie_de_banner_be310c70-1353-4fbb-9581-802ffc26b96d.svg",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "middle-center",
@@ -79,10 +106,10 @@
             "product_1": "anillo-timless",
             "column_2_type": "image",
             "product_2": "timless-mirror",
-            "image_2": "shopify:\/\/shop_images\/ANILLO_AJEDREZ_DEFINITIVO.jpg",
-            "full_image_2": "shopify:\/\/shop_images\/ANILLO_AJEDREZ_DEFINITIVO.jpg",
+            "image_2": "shopify://shop_images/ANILLO_AJEDREZ_DEFINITIVO.jpg",
+            "full_image_2": "shopify://shop_images/ANILLO_AJEDREZ_DEFINITIVO.jpg",
             "column_3_type": "image",
-            "image_3": "shopify:\/\/shop_images\/formulario-3.gif"
+            "image_3": "shopify://shop_images/formulario-3.gif"
           }
         },
         "row_EAfDcB": {
@@ -105,7 +132,7 @@
             "column_2_type": "product",
             "product_2": "timless-brazalet",
             "column_3_type": "image",
-            "image_3": "shopify:\/\/shop_images\/formulario-2.gif"
+            "image_3": "shopify://shop_images/formulario-2.gif"
           }
         },
         "row_BazH6M": {
@@ -128,7 +155,7 @@
             "column_2_type": "product",
             "product_2": "timless-mirror",
             "column_3_type": "image",
-            "image_3": "shopify:\/\/shop_images\/DSC02810.jpg"
+            "image_3": "shopify://shop_images/DSC02810.jpg"
           }
         },
         "row_8UEX6F": {
@@ -164,10 +191,10 @@
             "row_sub_title": "",
             "column_1_type": "product",
             "product_1": "anillo-timless",
-            "full_image": "shopify:\/\/shop_images\/DSC00589_801f5340-6124-44f9-a7f8-ca1981a645c4.jpg",
+            "full_image": "shopify://shop_images/DSC00589_801f5340-6124-44f9-a7f8-ca1981a645c4.jpg",
             "column_2_type": "image",
             "product_2": "",
-            "image_2": "shopify:\/\/shop_images\/DSC00589_801f5340-6124-44f9-a7f8-ca1981a645c4.jpg"
+            "image_2": "shopify://shop_images/DSC00589_801f5340-6124-44f9-a7f8-ca1981a645c4.jpg"
           }
         },
         "row_QkhtVk": {
@@ -199,10 +226,10 @@
             "row_sub_title": "",
             "column_1_type": "image",
             "product_1": "",
-            "image_1": "shopify:\/\/shop_images\/DSC00552_012d58e5-85bc-45ee-a7e1-3392c9ed9b9a.jpg",
+            "image_1": "shopify://shop_images/DSC00552_012d58e5-85bc-45ee-a7e1-3392c9ed9b9a.jpg",
             "column_2_type": "image",
             "product_2": "",
-            "image_2": "shopify:\/\/shop_images\/DSC00594.jpg"
+            "image_2": "shopify://shop_images/DSC00594.jpg"
           }
         },
         "row_L47dt4": {
@@ -212,11 +239,11 @@
             "row_sub_title": "",
             "column_1_type": "image",
             "product_1": "",
-            "image_1": "shopify:\/\/shop_images\/DSC00553.jpg",
-            "full_image": "shopify:\/\/shop_images\/PB080081.jpg",
+            "image_1": "shopify://shop_images/DSC00553.jpg",
+            "full_image": "shopify://shop_images/PB080081.jpg",
             "column_2_type": "image",
             "product_2": "",
-            "image_2": "shopify:\/\/shop_images\/DSC00598_34d2ef33-21c9-463f-a48e-cb41986c6ed9.jpg"
+            "image_2": "shopify://shop_images/DSC00598_34d2ef33-21c9-463f-a48e-cb41986c6ed9.jpg"
           }
         },
         "row_GbV8Ab": {
@@ -248,7 +275,7 @@
       "type": "image-banner",
       "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/IMG_4483-3.jpg",
+        "image": "shopify://shop_images/IMG_4483-3.jpg",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "middle-center",
@@ -267,8 +294,8 @@
         "heading": "",
         "heading_size": "h2",
         "enable_video_looping": true,
-        "video": "shopify:\/\/files\/videos\/PRUEBA RCO HD FINAL.mp4",
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "video": "shopify://files/videos/PRUEBA RCO HD FINAL.mp4",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
         "description": "",
         "full_width": false,
         "color_scheme": "",
@@ -278,8 +305,7 @@
     }
   },
   "order": [
-    "image_banner_Jq9Efz",
-    "image_banner_TUwFgP",
+    "slideshow_WMCqh4",
     "image_banner_3gjKXG",
     "dynamic_products_web_NaREKM",
     "dynamic_products_mobile_gVxcp7",
