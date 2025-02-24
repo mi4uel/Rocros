@@ -1,0 +1,289 @@
+{
+  "sections": {
+    "image_banner_Jq9Efz": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/BANNER_ANILLO_PUNO.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "image_banner_TUwFgP": {
+      "type": "image-banner",
+      "disabled": true,
+      "custom_css": [
+        ".tu-clase-banner {margin-bottom: 10px;}",
+        ".tu-clase-logo {margin-top: 10px;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/banner-web.gif",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "top-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "image_banner_3gjKXG": {
+      "type": "image-banner",
+      "custom_css": [
+        ".tu-clase-banner {margin-bottom: 10px;}",
+        ".tu-clase-logo {margin-top: 10px;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Logo_timeless_collection_pie_de_banner_be310c70-1353-4fbb-9581-802ffc26b96d.svg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
+    "dynamic_products_web_NaREKM": {
+      "type": "dynamic-products-web",
+      "blocks": {
+        "row_iCQBMq": {
+          "type": "row",
+          "settings": {
+            "row_title": "",
+            "row_sub_title": "",
+            "product_1": "",
+            "column_2_type": "product",
+            "product_2": "",
+            "column_3_type": "image"
+          }
+        },
+        "row_WLBwVb": {
+          "type": "row",
+          "settings": {
+            "row_title": "",
+            "row_sub_title": "",
+            "product_1": "anillo-timless",
+            "column_2_type": "image",
+            "product_2": "timless-mirror",
+            "image_2": "shopify:\/\/shop_images\/ANILLO_AJEDREZ_DEFINITIVO.jpg",
+            "full_image_2": "shopify:\/\/shop_images\/ANILLO_AJEDREZ_DEFINITIVO.jpg",
+            "column_3_type": "image",
+            "image_3": "shopify:\/\/shop_images\/formulario-3.gif"
+          }
+        },
+        "row_EAfDcB": {
+          "type": "row",
+          "settings": {
+            "row_title": "",
+            "row_sub_title": "",
+            "product_1": "",
+            "column_2_type": "product",
+            "product_2": "",
+            "column_3_type": "image"
+          }
+        },
+        "row_gf4PVY": {
+          "type": "row",
+          "settings": {
+            "row_title": "",
+            "row_sub_title": "",
+            "product_1": "prueba",
+            "column_2_type": "product",
+            "product_2": "timless-brazalet",
+            "column_3_type": "image",
+            "image_3": "shopify:\/\/shop_images\/formulario-2.gif"
+          }
+        },
+        "row_BazH6M": {
+          "type": "row",
+          "settings": {
+            "row_title": "",
+            "row_sub_title": "",
+            "product_1": "",
+            "column_2_type": "product",
+            "product_2": "",
+            "column_3_type": "image"
+          }
+        },
+        "row_QAJVwj": {
+          "type": "row",
+          "settings": {
+            "row_title": "",
+            "row_sub_title": "",
+            "product_1": "copia-de-timless-mirror",
+            "column_2_type": "product",
+            "product_2": "timless-mirror",
+            "column_3_type": "image",
+            "image_3": "shopify:\/\/shop_images\/DSC02810.jpg"
+          }
+        },
+        "row_8UEX6F": {
+          "type": "row",
+          "settings": {
+            "row_title": "",
+            "row_sub_title": "",
+            "product_1": "",
+            "column_2_type": "product",
+            "product_2": "",
+            "column_3_type": "image"
+          }
+        }
+      },
+      "block_order": [
+        "row_iCQBMq",
+        "row_WLBwVb",
+        "row_EAfDcB",
+        "row_gf4PVY",
+        "row_BazH6M",
+        "row_QAJVwj",
+        "row_8UEX6F"
+      ],
+      "settings": {}
+    },
+    "dynamic_products_mobile_gVxcp7": {
+      "type": "dynamic-products-mobile",
+      "blocks": {
+        "row_FJzL6R": {
+          "type": "row",
+          "settings": {
+            "row_title": "Sello",
+            "row_sub_title": "",
+            "column_1_type": "product",
+            "product_1": "anillo-timless",
+            "full_image": "shopify:\/\/shop_images\/DSC00589_801f5340-6124-44f9-a7f8-ca1981a645c4.jpg",
+            "column_2_type": "image",
+            "product_2": "",
+            "image_2": "shopify:\/\/shop_images\/DSC00589_801f5340-6124-44f9-a7f8-ca1981a645c4.jpg"
+          }
+        },
+        "row_QkhtVk": {
+          "type": "row",
+          "settings": {
+            "row_title": "Anillos",
+            "row_sub_title": "Timeless Colection",
+            "column_1_type": "product",
+            "product_1": "timless-brazalet",
+            "column_2_type": "product",
+            "product_2": "prueba"
+          }
+        },
+        "row_JyNLxY": {
+          "type": "row",
+          "settings": {
+            "row_title": "Cadenas",
+            "row_sub_title": "Timeless Colection",
+            "column_1_type": "product",
+            "product_1": "copia-de-timless-mirror",
+            "column_2_type": "product",
+            "product_2": "timless-mirror"
+          }
+        },
+        "row_bmyE8G": {
+          "type": "row",
+          "settings": {
+            "row_title": "",
+            "row_sub_title": "",
+            "column_1_type": "image",
+            "product_1": "",
+            "image_1": "shopify:\/\/shop_images\/DSC00552_012d58e5-85bc-45ee-a7e1-3392c9ed9b9a.jpg",
+            "column_2_type": "image",
+            "product_2": "",
+            "image_2": "shopify:\/\/shop_images\/DSC00594.jpg"
+          }
+        },
+        "row_L47dt4": {
+          "type": "row",
+          "settings": {
+            "row_title": "",
+            "row_sub_title": "",
+            "column_1_type": "image",
+            "product_1": "",
+            "image_1": "shopify:\/\/shop_images\/DSC00553.jpg",
+            "full_image": "shopify:\/\/shop_images\/PB080081.jpg",
+            "column_2_type": "image",
+            "product_2": "",
+            "image_2": "shopify:\/\/shop_images\/DSC00598_34d2ef33-21c9-463f-a48e-cb41986c6ed9.jpg"
+          }
+        },
+        "row_GbV8Ab": {
+          "type": "row",
+          "settings": {
+            "row_title": "",
+            "row_sub_title": "",
+            "column_1_type": "product",
+            "product_1": "",
+            "column_2_type": "product",
+            "product_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_FJzL6R",
+        "row_QkhtVk",
+        "row_JyNLxY",
+        "row_bmyE8G",
+        "row_L47dt4",
+        "row_GbV8Ab"
+      ],
+      "settings": {
+        "heading_title": "",
+        "heading_sub_title": ""
+      }
+    },
+    "image_banner_cN43x9": {
+      "type": "image-banner",
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/IMG_4483-3.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "video_EwJ4Eq": {
+      "type": "video",
+      "settings": {
+        "heading": "",
+        "heading_size": "h2",
+        "enable_video_looping": true,
+        "video": "shopify:\/\/files\/videos\/PRUEBA RCO HD FINAL.mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "image_banner_Jq9Efz",
+    "image_banner_TUwFgP",
+    "image_banner_3gjKXG",
+    "dynamic_products_web_NaREKM",
+    "dynamic_products_mobile_gVxcp7",
+    "image_banner_cN43x9",
+    "video_EwJ4Eq"
+  ]
+}

@@ -1,0 +1,239 @@
+{% comment %}
+  Renders cart notification
+
+  Accepts:
+  - color_scheme: {String} sets the color scheme of the notification (optional)
+  - desktop_menu_type: {String} passes the desktop menu type which allows us to use the right css class (optional)
+
+  Usage:
+  {% render 'cart-notification' %}
+{% endcomment %}
+
+{%- liquid
+  assign price = cart.total_price
+  assign money_price = price | money
+  if settings.currency_code_enabled
+    if shop.currency == 'USD'
+      assign currency_symbol = '$'
+    elsif shop.currency == 'EUR'
+      assign currency_symbol = '€'
+    elsif shop.currency == 'GBP'
+      assign currency_symbol = '£'
+    else
+      assign currency_symbol = shop.currency
+    endif
+
+    assign money_price = price | divided_by: 100 | append: currency_symbol
+  endif
+
+-%}
+
+<cart-notification-base>
+  <div class="cart-notification-wrapper{% if desktop_menu_type != 'drawer' %} page-width{% endif %}">
+    <div id="background-overlay-base" class="background-overlay-base">.</div>
+    <div
+      id="cart-notification-base"
+      class="cart-notification-base focus-inset{% if color_scheme %} color-{{ color_scheme }} gradient{% endif %}"
+      aria-modal="true"
+      aria-label="{{ 'general.cart.item_added' | t }}"
+      role="dialog"
+      tabindex="-1"
+    >
+      <div class="cart-notification__header">
+        <h2 class="cart-notification__heading caption-large text-body mb-2">
+          {{ 'general.cart.item_added' | t }}
+        </h2>
+        <button
+          id="close-btn-base"
+          type="button"
+          class="cart-notification__close modal__close-button link link--text focus-inset"
+          aria-label="{{ 'accessibility.close' | t }}"
+        >
+          <svg class="icon icon-close" aria-hidden="true" focusable="false">
+            <use href="#icon-close">
+          </svg>
+        </button>
+      </div>
+
+      <cart-drawer-items
+        {% if cart == empty %}
+          class=" is-empty"
+        {% endif %}
+      >
+
+        <!-- LISTA DE PRODUCTOS AGREGADOS -->
+        <form
+          action="{{ routes.cart_url }}"
+          id="CartDrawer-Form"
+          class="cart__contents cart-drawer__form"
+          method="post"
+        >
+          {%- if cart != empty -%}
+            {% render 'cart-notification-product' %}
+          {%- endif -%}
+          <p id="CartDrawer-LiveRegionText" class="visually-hidden" role="status">{{ 'sections.cart.empty' | t }}</p>
+          <p id="CartDrawer-LineItemStatus" class="visually-hidden" aria-hidden="false" role="status">
+            {{ 'accessibility.loading' | t }}
+          </p>
+
+          <div id="CartDrawer-CartErrors" role="alert"></div>
+        </form>
+      </cart-drawer-items>
+
+
+      <div> 
+        <div class="divider cart-divider">
+          <p> </p>
+        </div>
+        <!-- COSTO TOTAL Y CHECKOUT BUTTON -->
+        <div class="drawer__footer" id="drawerFooter">
+          {%- if settings.show_cart_note -%}
+            <details id="Details-CartDrawer">
+              <summary>
+                <span class="summary__title">
+                  {{ 'sections.cart.note' | t }}
+                  {% render 'icon-caret' %}
+                </span>
+              </summary>
+              <cart-note class="cart__note field">
+                <label class="visually-hidden" for="CartDrawer-Note">{{ 'sections.cart.note' | t }}</label>
+                <textarea
+                  id="CartDrawer-Note"
+                  class="text-area text-area--resize-vertical field__input"
+                  name="note"
+                  placeholder="{{ 'sections.cart.note' | t }}"
+                >{{ cart.note }}</textarea>
+              </cart-note>
+            </details>
+          {%- endif -%}
+
+          <!-- Subtotals -->
+          <div class="cart-drawer__footer" {{ block.shopify_attributes }}>
+            <div>
+              {%- if cart.cart_level_discount_applications.size > 0 -%}
+                <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
+                  {%- for discount in cart.cart_level_discount_applications -%}
+                    <li class="discounts__discount discounts__discount--end">
+                      {%- render 'icon-discount' -%}
+                      {{ discount.title }}
+                      (-{{ discount.total_allocated_amount | money }})
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              {%- endif -%}
+            </div>
+
+             <!-- TOTAL -->
+            <div class="totals mt-4" role="status">
+              <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
+              <p class="totals__total-value">{{ money_price }}</p>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="cart__ctas" {{ block.shopify_attributes }}>
+          <noscript>
+            <button type="submit" class="cart__update-button button button--secondary" form="CartDrawer-Form">
+              {{ 'sections.cart.update' | t }}
+            </button>
+          </noscript>
+
+          <button
+            type="submit"
+            id="CartDrawer-Checkout"
+            class="cart__checkout-button button cart-checkout-button--black w-100"
+            name="checkout"
+            form="CartDrawer-Form"
+            {% if cart == empty %}
+              disabled
+            {% endif %}
+          >
+            {{ 'sections.cart.checkout' | t }}
+          </button>
+          </div>
+
+          <div class="cart-notification__links">
+            <button type="button" class="link button-label" id="btn-keep-buying-base">{{ 'general.continue_shopping' | t }}</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</cart-notification-base>
+{% style %}
+  .cart-notification-base {
+    display: none;
+  }
+{% endstyle %}
+{% comment %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.addEventListener('click', function (event) {
+        const button = event.target.closest('.remove-item-js');
+        if (button) {
+          event.preventDefault();
+          const url = button.getAttribute('href');
+          fetch(url)
+            .then((response) => {
+              updateCartContent();
+            })
+            .catch((error) => {
+              console.error('Error al eliminar el artículo:', error);
+            });
+        }
+      });
+  
+      function updateCartContent() {
+        fetch('/cart.js')
+          .then((response) => response.json())
+          .then((cart) => {
+            console.log('Carrito actualizado:', cart);
+          });
+      }
+    });
+  </script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.addEventListener('change', function (event) {
+        const dropdown = event.target.closest('.quantity-selector');
+        if (dropdown) {
+          const newQuantity = dropdown.value;
+          const line = dropdown.getAttribute('data-line');
+          updateCartQuantity(line, newQuantity);
+        }
+      });
+  
+      function updateCartQuantity(line, quantity) {
+        fetch('/cart/change.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            line: line,
+            quantity: quantity,
+          }),
+        })
+          .then((response) => response.json())
+          .then((cart) => {
+            console.log('Carrito actualizado:', cart);
+            updateCartContent();
+          })
+          .catch((error) => {
+            console.error('Error al actualizar la cantidad:', error);
+          });
+      }
+  
+      function updateCartContent() {
+        fetch('/cart.js')
+          .then((response) => response.json())
+          .then((cart) => {
+            console.log('Contenido del carrito actualizado:', cart);
+          });
+      }
+    });
+  </script>
+ 
+{% endcomment %}

@@ -1,0 +1,127 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-dynamic-products.css' | asset_url | stylesheet_tag }}
+{{ 'component-loose-pieces.css' | asset_url | stylesheet_tag }}
+
+<div
+  id="web-container"
+  class="custom-grid-section slider-mobile-gutter page-width page-width-desktop scroll-trigger animate--slide-in"
+>
+  <div class="row-title-container">
+    <h3 class="row-title">{{ section.settings.row_title }}</h3>
+    <h4 class="row-sub-title">{{ section.settings.row_sub_title }}</h4>
+  </div>
+
+  {% assign products = section.settings.collection.products %}
+  {% assign row_count = 0 %}
+  {% assign total_products = products.size %}
+  {% assign remaining_products = total_products %}
+  {% assign row_class = 'row' %}
+
+  {% for product in products %}
+    {% if row_count == 0 %}
+      <!-- Verifica si es la última fila -->
+      {% if remaining_products <= 3 %}
+        {% if remaining_products < 3 %}
+          {% assign row_class = "row" %}
+        {% else %}
+          {% assign row_class = "row" %}
+        {% endif %}
+      {% else %}
+        {% assign row_class = "row" %}
+      {% endif %}
+      <div class="{{ row_class }}">
+    {% endif %}
+  
+    <!-- Columna para cada producto -->
+    <div class="column">
+      {% render 'card-dynamic-product-web', card_product: product, loose_pieces: 'true' %}
+    </div>
+  
+    {% assign row_count = row_count | plus: 1 %}
+    {% assign remaining_products = remaining_products | minus: 1 %}
+  
+    {% if row_count == 3 or forloop.last %}
+      <!-- Si es el último row y tiene menos de 3 productos, llena con columnas vacías -->
+      {% if forloop.last and row_count < 3 %}
+        {% assign empty_columns = 3 | minus: row_count %}
+        {% for i in (1..empty_columns) %}
+          <div class="column">
+            <p></p>
+          </div>
+        {% endfor %}
+      {% endif %}
+      
+      </div> <!-- Cierra el contenedor de fila -->
+      {% assign row_count = 0 %}
+    {% else %}
+      {% render 'card-dynamic-product-description', product: "" %}
+    {% endif %}
+  {% endfor %}
+  
+</div>
+
+<div
+  id="mobile-container"
+  class="custom-grid-section slider-mobile-gutter page-width page-width-desktop scroll-trigger animate--slide-in"
+>
+  <div class="row-title-container">
+    <h3 class="row-title">{{ section.settings.row_title }}</h3>
+    <h4 class="row-sub-title">{{ section.settings.row_sub_title }}</h4>
+  </div>
+
+  {% assign products = section.settings.collection.products %}
+  {% assign row_count = 0 %}
+  {% assign total_products = products.size %}
+  {% assign remaining_products = total_products %}
+  {% assign row_class = 'row' %}
+
+  {% for product in products %}
+    {% if row_count == 0 %}
+      <div class="row">
+    {% endif %}
+  
+    <!-- Columna para cada producto -->
+    <div class="column">
+      {% render 'card-dynamic-product-web', card_product: product, loose_pieces: 'true' %}
+    </div>
+  
+    {% assign row_count = row_count | plus: 1 %}
+    {% assign remaining_products = remaining_products | minus: 1 %}
+  
+    {% if row_count == 2 or forloop.last %}      
+      </div>
+      {% assign row_count = 0 %}
+    {% endif %}
+  {% endfor %}
+  
+</div>
+
+{% schema %}
+{
+  "name": "Piezas Sueltas Web",
+  "settings": [
+    {
+      "type": "text",
+      "id": "row_title",
+      "label": "Título"
+    },
+    {
+      "type": "text",
+      "id": "row_sub_title",
+      "label": "Sub Título"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Colección"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Piezas Sueltas Web",
+      "category": "Secciones Personalizadas"
+    }
+  ]
+}
+{% endschema %}

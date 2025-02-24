@@ -1,0 +1,24 @@
+{{ 'component-rating.css' | asset_url | stylesheet_tag }}
+{{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
+
+<div class="card-wrapper product-card-wrapper underline-links-hover">
+  <div class="card card--standard card--media">
+    <div class="card__inner color-scheme-2 gradient ratio" style="--ratio-percent: 125%">
+      <!-- Imagen -->
+      {%- if card_image -%}
+        <div class="card__media">
+          <div class="media media--transparent">
+            <img
+              src="{{ card_image | image_url: width: 533 }}"
+              alt="{{ card_image.alt | escape }}"
+              class="motion-reduce"
+              width="{{ card_image.width }}"
+              height="{{ card_image.height }}"
+            >
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+
+  </div>
+</div>

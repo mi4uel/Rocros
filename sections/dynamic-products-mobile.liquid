@@ -1,0 +1,162 @@
+
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-dynamic-products.css' | asset_url | stylesheet_tag }}
+
+
+<div id="mobile-container" class="custom-grid-section slider-mobile-gutter page-width page-width-desktop scroll-trigger animate--slide-in">
+  <div class="heading-title-container">
+    <h3 class="heading-title">{{ section.settings.heading_title }}</h3>
+    <h4 class="row-sub-title">{{ section.settings.heading_sub_title }}</h4>
+  </div>
+
+  {% for block in section.blocks %}
+    <div class="row 
+      {% if 
+       block.settings.column_1_type == 'image' or 
+       block.settings.column_1_type == 'full_image' and 
+       block.settings.column_2_type == 'image'%}row-imagen{% endif %}">
+      <div class="row-title-container">
+        <h3 class="row-title">{{ block.settings.row_title }}</h3>
+        <h4 class="row-sub-title">{{ block.settings.row_sub_title }}</h4>
+      </div>
+
+      <!-- Columna 1 -->
+      <div class="column {% if block.settings.column_1_type == 'full_image' and block.settings.full_image %}column-full-imagen{% endif %}">
+        {% if block.settings.column_1_type == 'product' and block.settings.product_1 != blank %}
+          <!-- Producto 1 -->
+          {% render 'card-dynamic-product-web', card_product: block.settings.product_1 %}
+
+        {% elsif block.settings.column_1_type == 'image' and block.settings.image_1 %}
+          <!-- Imagen 1 -->
+          {% render 'card-dynamic-image-web', card_image: block.settings.image_1 %}
+
+        {% elsif block.settings.column_1_type == 'full_image' and block.settings.full_image %}
+          <!-- Imagen Completa 1 -->
+          {% render 'card-dynamic-full-image-web', card_image: block.settings.full_image %}
+
+        {% endif %}
+      </div>
+
+
+
+
+      <!-- Columna 2 -->
+      {% if block.settings.column_1_type != 'full_image' %}
+      <div class="column">
+        {% if block.settings.column_2_type == 'product' and block.settings.product_2 != blank %}
+          <!-- Producto 2 -->
+          {% render 'card-dynamic-product-web', card_product: block.settings.product_2 %}
+
+        {% elsif block.settings.column_2_type == 'image' and block.settings.image_2 %}
+          <!-- Imagen 2 -->
+          {% render 'card-dynamic-image-web', card_image: block.settings.image_2 %}
+        {% endif %}
+      </div>
+
+    {% endif %}
+
+
+    </div>
+  {% endfor %}
+</div>
+
+
+{% schema %}
+{
+  "name": "Productos Mobile",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_title",
+      "label": "Título de la Sección"
+    },
+    {
+      "type": "text",
+      "id": "heading_sub_title",
+      "label": "Sub Título de la Sección"
+    },
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Fila",
+      "settings": [   
+        {
+          "type": "text",
+          "id": "row_title",
+          "label": "Título de la Fila"
+        },
+        {
+          "type": "text",
+          "id": "row_sub_title",
+          "label": "Sub Título de la Fila"
+        },
+        {
+          "type": "select",
+          "id": "column_1_type",
+          "label": "Columna 1 - Producto o Imagen",
+          "options": [
+            { "value": "product", "label": "Producto" },
+            { "value": "image", "label": "Imagen" },
+            { "value": "full_image", "label": "Imagen Completa" }
+          ]
+        },
+        {
+          "type": "product",
+          "id": "product_1",
+          "label": "Seleccionar producto para columna 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Seleccionar imagen para columna 1"
+        },
+        {
+          "type": "paragraph",
+          "content": "Nota: El formato de la imagen debe ser de 300x380."
+        },
+        {
+          "type": "image_picker",
+          "id": "full_image",
+          "label": "Seleccionar imagen completa para columna 1"
+        },
+        {
+          "type": "paragraph",
+          "content": "Nota: El formato de la imagen debe ser de 840x380."
+        },
+        {
+          "type": "select",
+          "id": "column_2_type",
+          "label": "Columna 2 - Producto o Imagen",
+          "options": [
+            { "value": "product", "label": "Producto" },
+            { "value": "image", "label": "Imagen" }
+          ]
+        },
+        {
+          "type": "product",
+          "id": "product_2",
+          "label": "Seleccionar producto para columna 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Seleccionar imagen para columna 2"
+        },
+        {
+          "type": "paragraph",
+          "content": "Nota: El formato de la imagen debe ser de 300x380"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Productos Mobile",
+      "category": "Secciones Personalizadas"
+    }
+  ]
+}
+{% endschema %}
+

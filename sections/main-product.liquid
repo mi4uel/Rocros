@@ -1,0 +1,189 @@
+<script src="{{ 'product-image-effect.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+{{ 'component-dynamic-detail-product.css' | asset_url | stylesheet_tag }}
+{{ 'component-product-variant-picker.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+{%- assign product_form_id = 'product-form-' | append: section.id -%}
+
+<section
+  id="MainProduct-{{ section.id }}"
+  class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }} main-product-container"
+  data-section="{{ section.id }}"
+>
+  <div class="product-page">
+    <!-- IMAGENES -->
+    <div class="product-images">
+      {% for product_image in product.images %}
+        {% render 'product-detail-image', product_image: product_image %}
+      {% endfor %}
+    </div>
+    <div class="product-details-container">
+      <div class="product-detail">
+
+        
+        <!-- TITULO -->
+        <h3 class="product-title">{{ product.title | escape }}</h3>
+
+        <!-- PRECIO -->
+        <div class="card-information">
+          {% render 'dynamic-price', product: product, price_class: '', show_compare_at_price: true, use_variant: true %}
+        </div>
+        
+        <!-- SELECCION TALLAS -->
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when '@app' -%}
+              {% render block %}
+    
+            {%- when 'variant_picker' -%}       
+              {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id, url: section.settings.url_size_guide %}
+ 
+          {%- endcase -%}
+        {%- endfor -%}
+
+        <!-- BOTONES COMPRAR -->
+        {%- render 'buy-buttons',
+          block: section.blocks.variant_picker,
+          product: product,
+          product_form_id: product_form_id,
+          section_id: section.id,
+          show_pickup_availability: true
+        -%}
+
+        <!-- ACORDEON -->
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}     
+            {%- when 'product_details' -%}    
+              {%- render 'product-accordion', product: product, product_details: block.settings, url: section.settings.url_size_guide -%}
+    
+          {%- endcase -%}
+        {%- endfor -%}
+        
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.main-product.name",
+  "tag": "section",
+  "class": "section",
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "variant_picker",
+      "name": "t:sections.main-product.blocks.variant_picker.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "picker_type",
+          "options": [
+            {
+              "value": "dropdown",
+              "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__1.label"
+            },
+            {
+              "value": "button",
+              "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__2.label"
+            }
+          ],
+          "default": "button",
+          "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.label"
+        },
+        {
+          "id": "swatch_shape",
+          "label": "t:sections.main-product.blocks.variant_picker.settings.swatch_shape.label",
+          "type": "select",
+          "info": "t:sections.main-product.blocks.variant_picker.settings.swatch_shape.info",
+          "options": [
+            {
+              "value": "circle",
+              "label": "t:sections.main-product.blocks.variant_picker.settings.swatch_shape.options__1.label"
+            },
+            {
+              "value": "square",
+              "label": "t:sections.main-product.blocks.variant_picker.settings.swatch_shape.options__2.label"
+            },
+            {
+              "value": "none",
+              "label": "t:sections.main-product.blocks.variant_picker.settings.swatch_shape.options__3.label"
+            }
+          ],
+          "default": "circle"
+        }
+      ]
+    },
+    {
+      "type": "buy_buttons",
+      "name": "t:sections.main-product.blocks.buy_buttons.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_dynamic_checkout",
+          "default": true,
+          "label": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.label",
+          "info": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.info"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_gift_card_recipient",
+          "default": true,
+          "label": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.label",
+          "info": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.info"
+        }
+      ]
+    },
+    {
+      "type": "custom_liquid",
+      "name": "t:sections.custom-liquid.name",
+      "settings": [
+        {
+          "type": "liquid",
+          "id": "custom_liquid",
+          "label": "t:sections.custom-liquid.settings.custom_liquid.label",
+          "info": "t:sections.custom-liquid.settings.custom_liquid.info"
+        }
+      ]
+    },
+    {
+      "type": "product_details",
+      "name": "Detalles",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "care_details",
+          "label": "Cuidados"
+        },
+        {
+          "type": "richtext",
+          "id": "ship_details",
+          "label": "Envios y Devoluciones"
+        },
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "url",
+      "id": "url_size_guide",
+      "label": "URL Guia de Tallas"
+    },
+  ]
+}
+{% endschema %}

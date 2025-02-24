@@ -1,0 +1,40 @@
+
+
+{%- if product -%}
+<div class="column-contenido">
+  <h3 class="product-title product-title-regular">
+    {{  product.title }}
+  </h3>
+
+  <div class="product-description">
+    <p> {{ product.description }}</p>
+  </div>
+  
+  <div class="product-description">
+    {%- for option in product.options -%}
+      <p class="options-texts">{{ option }}:&nbsp;
+        {%- capture option_values -%}
+          {%- assign has_available_sizes = false -%}
+          {%- for value in product.options_by_name[option].values -%}
+            {%- assign inventory = product.variants | where: 'option1', value | first | default: null -%}
+            {% if inventory and inventory.inventory_quantity == 0 %}
+              <span class="strikethrough">{{ value }}</span>   
+            {% else %}
+              {%- assign has_available_sizes = true -%}
+              {{ value }}
+            {% endif %}
+            {% unless forloop.last %}/{% endunless %}
+          {%- endfor -%}
+        {%- endcapture -%}
+        {{ option_values | strip_newlines }}
+      </p>
+
+      {% if has_available_sizes == false %}
+        <p class="sold-out">Sold Out</p>
+      {% endif %}
+
+    {%- endfor -%}
+  </div>
+  
+</div>
+{%- endif -%}

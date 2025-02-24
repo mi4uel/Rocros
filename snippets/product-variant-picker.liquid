@@ -1,0 +1,57 @@
+{% comment %}
+  Renders product variant-picker
+
+  Accepts:
+  - product: {Object} product object.
+  - block: {Object} passing the block information.
+  - product_form_id: {String} Id of the product form to which the variant picker is associated.
+  - update_url: {Boolean} whether or not to update url when changing variants. If false, the url isn't updated. Default: true (optional).
+  Usage:
+  {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+{% endcomment %}
+{%- unless product.has_only_default_variant -%}
+  <variant-selects
+    id="variant-selects-{{ section.id }}"
+    data-variants="{{ product.variants | json |  escape}}"
+    class="no-js-hidden"
+    data-section="{{ section.id }}"
+    data-url="{{ product.url }}"
+    {% if update_url == false %}
+      data-update-url="false"
+    {% endif %}
+    {{ block.shopify_attributes }}
+  >
+    {%- for option in product.options_with_values -%}
+      {%- liquid
+        assign swatch_count = option.values | map: 'swatch' | compact | size
+        assign picker_type = block.settings.picker_type
+
+        if swatch_count > 0 and block.settings.swatch_shape != 'none'
+          if block.settings.picker_type == 'dropdown'
+            assign picker_type = 'swatch_dropdown'
+          else
+            assign picker_type = 'swatch'
+          endif
+        endif
+      -%}
+
+      {%- if picker_type == 'button' -%}
+        <a href="{{ url }}" target="_blank"><legend class="form__extra-label mobile">Guia de {{ option.name }}</legend></a>
+        <legend class="form__label">{{ option.name }}</legend>
+        <fieldset class="js product-form__input product-form__input--pill">       
+          {% render 'product-variant-options',
+            product: product,
+            option: option,
+            block: block,
+            picker_type: picker_type
+          %}
+        </fieldset>
+        <a href="{{ url }}" target="_blank"><legend class="form__extra-label">Guia de {{ option.name }}</legend></a>
+      {%- endif -%}
+    {%- endfor -%}
+    <script type="application/json">
+      {{ product.variants | json }}
+    </script>
+  </variant-selects>
+{%- endunless -%}
+

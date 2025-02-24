@@ -1,0 +1,72 @@
+{{ 'product-accordion.css' | asset_url | stylesheet_tag }}
+
+{%- if product -%}
+  <div class="faqs">
+    <div class="faq">
+      <div class="head divider">
+        <span>DETALLES</span>
+        <svg class="icon-plus" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5V19M5 12H19" stroke="#676D77" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="icon-minus" style="display:none;" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 12H19" stroke="#676D77" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="content">
+        <p>
+          {{ product.description  }}
+        </p>
+      </div>
+    </div>
+    <div class="faq">
+      <div class="head deactivate">
+        <a href="{{ url }}" target="_blank" style="display: flex; align-items: center;">
+          <span>GUIA DE TALLAS</span>
+          <svg class="icon-plus" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5V19M5 12H19" stroke="#676D77" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg class="icon-minus" style="display:none;" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 12H19" stroke="#676D77" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+      <div class="divider">
+      </div>
+    </div>
+    <div class="faq">
+      <div class="head">
+        <span>CUIDADOS</span>
+        <svg class="icon-plus" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5V19M5 12H19" stroke="#676D77" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="icon-minus" style="display:none;" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 12H19" stroke="#676D77" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="content">
+        <p>
+          {{ product_details.care_details }}
+        </p>
+      </div>
+    </div>
+    <div class="faq">
+      <div class="head">
+        <span>ENVIO Y DEVOLUCIONES</span>
+        <svg class="icon-plus" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5V19M5 12H19" stroke="#676D77" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="icon-minus" style="display:none;" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 12H19" stroke="#676D77" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="content">
+        <p>
+          {{ product_details.ship_details }}
+        </p>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+
+<script src="{{ 'product-accordion.js' | asset_url }}" defer="defer"></script>

@@ -1,0 +1,62 @@
+<div class="card-wrapper product-card-wrapper underline-links-hover">
+
+
+  {%- if loose_pieces == 'true' -%}
+    <div class="loose-title-container">
+      <h3 class="loose-title">
+        {{ card_product.title | escape | upcase }}
+        <p class="loose-sub-title">{{ card_product.type | escape }}</p> 
+      </h3>
+      
+    </div>
+  {%- endif -%}
+  
+
+  <div class="card card--standard card--media">
+    <div
+      class="card__inner color-scheme-2 gradient ratio"
+      style="--ratio-percent: 125%"
+    >
+      <!-- Imagen -->
+      {%- if card_product.featured_image -%}
+        <div class="card__media">
+          <div class="media media--transparent media--hover-effect">
+            <img
+              src="{{ card_product.featured_image | image_url: width: 533 }}"
+              alt="{{ card_product.featured_image.alt | escape }}"
+              class="motion-reduce"
+              width="{{ card_product.featured_image.width }}"
+              height="{{ card_product.featured_image.height }}"
+            >
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+
+    <!-- Contenido Inferior -->
+    <div class="card__content">
+      <div class="card__information">
+        <h3
+          class="card__heading{% if card_product.featured_image or settings.card_style == 'standard' %} h5{% endif %}"
+          {% if card_product.featured_image or settings.card_style == 'card' %}
+            id="title-{{ section_id }}-{{ card_product.id }}"
+          {% endif %}
+        >
+          <a
+            href="{{ card_product.url }}"
+            id="CardLink-{{ section_id }}-{{ card_product.id }}"
+            class="full-unstyled-link product-title product-title-medium product-title-down"
+            aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
+          >
+            {{ card_product.title | escape }}
+          </a>
+        </h3>
+
+        <!-- Precio -->
+        <div class="card-information">
+          {% render 'dynamic-price', product: card_product, price_class: '', show_compare_at_price: true %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,87 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "square"
+          }
+        },
+        "product_details": {
+          "type": "product_details",
+          "settings": {
+            "care_details": "<p>fergfdxgf<\/p>",
+            "ship_details": "<p>gdfdfjhfijsdhiufghsiufh<\/p><p><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "buy_buttons",
+        "variant_picker",
+        "product_details"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "url_size_guide": "https:\/\/drive.google.com\/file\/d\/1xjsP8IaOtaY5KNjXRwjKbWvRFTX2TdQ_\/view?usp=sharing"
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "Mas de Timeless",
+        "heading_size": "h2",
+        "products_to_show": 10,
+        "columns_desktop": 5,
+        "color_scheme": "scheme-1",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "dynamic_products_mobile_nGMnBC": {
+      "type": "dynamic-products-mobile",
+      "blocks": {
+        "row_kdAH7P": {
+          "type": "row",
+          "settings": {
+            "row_title": "",
+            "row_sub_title": "",
+            "column_1_type": "product",
+            "product_1": "timless-mirror",
+            "column_2_type": "product",
+            "product_2": "copia-de-timless-mirror",
+            "image_2": "shopify:\/\/shop_images\/prueba_crown.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "row_kdAH7P"
+      ],
+      "settings": {
+        "heading_title": "",
+        "heading_sub_title": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products",
+    "dynamic_products_mobile_nGMnBC"
+  ]
+}
