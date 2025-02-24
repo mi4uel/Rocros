@@ -31,7 +31,7 @@
   aria-roledescription="{{ 'sections.slideshow.carousel' | t }}"
   aria-label="{{ section.settings.accessibility_info | escape }}"
 >
-  {%- if section.settings.auto_rotate and section.blocks.size > 1 -%}
+  {%- if section.settings.auto_rotate and section.blocks.size > 1 and section.settings.show_counter -%}
     <div class="slideshow__controls slideshow__controls--top slider-buttons no-js-hidden{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
       <button
         type="button"
@@ -349,6 +349,12 @@
       "id": "auto_rotate",
       "label": "t:sections.slideshow.settings.auto_rotate.label",
       "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_counter",
+      "label": "Show counter",
+      "default": true
     },
     {
       "type": "range",
