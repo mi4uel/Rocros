@@ -41,6 +41,7 @@
       "settings": {
         "logo_position": "middle-center",
         "menu": "main-menu",
+        "menu_bottom": "main-menu-bottom",
         "menu_type_desktop": "drawer",
         "sticky_header_type": "always",
         "show_line_separator": true,
