@@ -2120,6 +2120,7 @@ product-info .loading__spinner:not(.hidden) ~ *,
   bottom: 0.8rem;
   font-weight: bold;
   left: 3rem;
+  letter-spacing: -1.6px;
   line-height: calc(1 + 0.1 / var(--font-body-scale));
 }
 

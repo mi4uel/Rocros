@@ -138,8 +138,8 @@
                 assign sizes = '100vw'
                 assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
               endif
-              assign fetch_priority = 'auto'
-              if section.index == 1
+              assign fetch_priority = 'auto' 
+              if section.index == 1 
                 assign fetch_priority = 'high'
               endif
             -%}
@@ -150,15 +150,18 @@
                 | image_tag: height: height, sizes: sizes, widths: widths, fetchpriority: fetch_priority, class:'small-hide'
               }}
               {% if block.settings.image_mobile %}
+                {% liquid
+                  assign height = block.settings.image_mobile.width | divided_by: block.settings.image_mobile.aspect_ratio | round
+                %}
                 {{
                   block.settings.image_mobile
-                  | image_url: width: 3840
+                  | image_url: width: 850
                   | image_tag: height: height, sizes: sizes, widths: widths, fetchpriority: fetch_priority, class:'medium-hide large-up-hide'
                 }}
                 {% else %}
                 {{
                   block.settings.image
-                  | image_url: width: 3840
+                  | image_url: width: 850
                   | image_tag: height: height, sizes: sizes, widths: widths, fetchpriority: fetch_priority, class:'medium-hide large-up-hide'
                 }}
               {% endif %}
@@ -169,15 +172,18 @@
                 | image_tag: loading: 'lazy', height: height, sizes: sizes, widths: widths
               }}
               {% if block.settings.image_mobile %}
+                {% liquid
+                  assign height = block.settings.image_mobile.width | divided_by: block.settings.image_mobile.aspect_ratio | round
+                %}
                 {{
                   block.settings.image_mobile
-                  | image_url: width: 3840
+                  | image_url: width: 850
                   | image_tag:  loading: 'lazy', height: height, sizes: sizes, widths: widths, class:'medium-hide large-up-hide'
                 }}
                 {% else %}
                 {{
                   block.settings.image
-                  | image_url: width: 3840
+                  | image_url: width: 850
                   | image_tag: loading: 'lazy',  height: height, sizes: sizes, widths: widths, class:'medium-hide large-up-hide'
                 }}
               {% endif %}
