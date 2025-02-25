@@ -30,7 +30,6 @@
 
 .faqs .faq .content {
   height: 0px;
-  max-height: 300px;
   overflow-y: auto;
   transition: height 0.25s ease-in;
   border-bottom: 1px solid #afafaf;

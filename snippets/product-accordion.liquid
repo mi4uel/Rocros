@@ -16,6 +16,9 @@
         <p>
           {{ product.description  }}
         </p>
+        {% if product.metafields.custom.description != blank %}
+          {{ product.metafields.custom.description |  metafield_tag }}
+        {% endif %}
       </div>
     </div>
     <div class="faq">
