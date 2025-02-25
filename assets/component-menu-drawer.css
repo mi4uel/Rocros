@@ -277,3 +277,18 @@ details[open].menu-opening > .menu-drawer__submenu {
     transition: none !important;
   }
 }
+.bottom_menu-wrapper{
+  margin: 4rem 0 2rem 0;
+
+}
+.list-menu.bottom_menu {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.bottom_menu-wrapper hr{
+  width: 90%;
+  margin: 0 auto;
+}
+.list-menu.bottom_menu .menu-drawer__menu-item{
+  font-size: 1.6rem;
+}

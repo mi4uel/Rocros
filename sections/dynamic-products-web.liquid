@@ -80,7 +80,14 @@
 {% schema %}
 {
   "name": "Productos Web",
-  "settings": [],
+  "settings": [
+    {
+      "type": "checkbox",
+      "default":false,
+      "id": "use_metafield",
+      "label": "Usar metafield de productos"
+    }
+  ],
   "blocks": [
     {
       "type": "row",
