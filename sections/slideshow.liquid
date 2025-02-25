@@ -3,12 +3,16 @@
 {{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
 
 {%- if section.settings.slide_height == 'adapt_image' and section.blocks.first.settings.image != blank -%}
+  {% assign img = section.blocks.first.settings.image %}
+  {% if section.blocks.first.settings.image_mobile  != blank %}
+    {% assign img = section.blocks.first.settings.image_mobile %}
+  {% endif %}
   {%- style -%}
     @media screen and (max-width: 749px) {
       #Slider-{{ section.id }}::before,
       #Slider-{{ section.id }} .media::before,
       #Slider-{{ section.id }}:not(.banner--mobile-bottom) .banner__content::before {
-        padding-bottom: {{ 1 | divided_by: section.blocks.first.settings.image.aspect_ratio | times: 100 }}%;
+        padding-bottom: {{ 1 | divided_by: img.aspect_ratio | times: 100 }}%;
         content: '';
         display: block;
       }
