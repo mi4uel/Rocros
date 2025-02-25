@@ -5,3 +5,7 @@
 .related-products__heading {
   margin: 0 0 3rem;
 }
+.related-products .grid--2-col-tablet-down{
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
