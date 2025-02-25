@@ -75,7 +75,7 @@
       ],
       "settings": {
         "image": "shopify://shop_images/Logo_timeless_collection_pie_de_banner_be310c70-1353-4fbb-9581-802ffc26b96d.svg",
-        "image_mobile": "shopify://shop_images/DSC00352.jpg",
+        "image_mobile": "shopify://shop_images/BANNET_TC_MOVILE_597b1eba-63d1-4b9b-9720-66bba17afe38.svg",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "middle-center",
@@ -108,7 +108,7 @@
             "row_title": "",
             "row_sub_title": "",
             "product_1": "anillo-timless",
-            "column_2_type": "image",
+            "column_2_type": "full_image",
             "product_2": "timless-mirror",
             "image_2": "shopify://shop_images/ANILLO_AJEDREZ_DEFINITIVO.jpg",
             "full_image_2": "shopify://shop_images/ANILLO_AJEDREZ_DEFINITIVO.jpg",
