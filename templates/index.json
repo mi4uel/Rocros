@@ -77,7 +77,7 @@
         "image": "shopify://shop_images/Logo_timeless_collection_pie_de_banner_be310c70-1353-4fbb-9581-802ffc26b96d.svg",
         "image_mobile": "shopify://shop_images/encabezado_logo_timeless.svg",
         "image_overlay_opacity": 0,
-        "image_height": "adapt",
+        "image_height": "small",
         "desktop_content_position": "middle-center",
         "show_text_box": false,
         "desktop_content_alignment": "center",
