@@ -50,7 +50,7 @@
         "heading": "Mas de Timeless",
         "heading_size": "h2",
         "products_to_show": 10,
-        "columns_desktop": 5,
+        "columns_desktop": 4,
         "color_scheme": "scheme-1",
         "image_ratio": "portrait",
         "image_shape": "default",
