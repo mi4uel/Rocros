@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -20,8 +29,8 @@
         "product_details": {
           "type": "product_details",
           "settings": {
-            "care_details": "<p>fergfdxgf<\/p>",
-            "ship_details": "<p>gdfdfjhfijsdhiufghsiufh<\/p><p><\/p>"
+            "care_details": "<p>fergfdxgf</p>",
+            "ship_details": "<p>gdfdfjhfijsdhiufghsiufh</p><p></p>"
           }
         }
       },
@@ -32,7 +41,7 @@
       ],
       "settings": {
         "color_scheme": "",
-        "url_size_guide": "https:\/\/drive.google.com\/file\/d\/1xjsP8IaOtaY5KNjXRwjKbWvRFTX2TdQ_\/view?usp=sharing"
+        "url_size_guide": "https://drive.google.com/file/d/1xjsP8IaOtaY5KNjXRwjKbWvRFTX2TdQ_/view?usp=sharing"
       }
     },
     "related-products": {
@@ -66,13 +75,14 @@
             "product_1": "timless-mirror",
             "column_2_type": "product",
             "product_2": "copia-de-timless-mirror",
-            "image_2": "shopify:\/\/shop_images\/prueba_crown.jpg"
+            "image_2": "shopify://shop_images/prueba_crown.jpg"
           }
         }
       },
       "block_order": [
         "row_kdAH7P"
       ],
+      "disabled": true,
       "settings": {
         "heading_title": "",
         "heading_sub_title": ""
