@@ -273,46 +273,12 @@
         "heading_title": "",
         "heading_sub_title": ""
       }
-    },
-    "image_banner_cN43x9": {
-      "type": "image-banner",
-      "disabled": true,
-      "settings": {
-        "image": "shopify://shop_images/IMG_4483-3.jpg",
-        "image_overlay_opacity": 0,
-        "image_height": "adapt",
-        "desktop_content_position": "middle-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
-      }
-    },
-    "video_EwJ4Eq": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "heading_size": "h2",
-        "enable_video_looping": true,
-        "video": "shopify://files/videos/PRUEBA RCO HD FINAL.mp4",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
     }
   },
   "order": [
     "slideshow_WMCqh4",
     "image_banner_3gjKXG",
     "dynamic_products_web_NaREKM",
-    "dynamic_products_mobile_gVxcp7",
-    "image_banner_cN43x9",
-    "video_EwJ4Eq"
+    "dynamic_products_mobile_gVxcp7"
   ]
 }
