@@ -3,9 +3,20 @@
 }
 
 .related-products__heading {
-  margin: 0 0 3rem;
+  margin: 0 0 2rem;
 }
 .related-products .grid--2-col-tablet-down{
   flex-wrap: nowrap;
   overflow-x: auto;
+}
+.related-products .full-unstyled-link{
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.related-products .price-item{
+  font-size: 1.6rem;
+  font-family: var(--font-body-family);
+}
+.related-products .card-information{
+  margin-top: .6rem;
 }
