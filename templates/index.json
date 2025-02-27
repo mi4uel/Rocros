@@ -9,6 +9,23 @@
  */
 {
   "sections": {
+    "image_banner_mmDwbL": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify://shop_images/BANNER_ANILLO_PUNO.jpg",
+        "image_mobile": "shopify://shop_images/DSC00589_277d3911-fb8a-4f19-b2f9-8232e77f1075.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "slideshow_WMCqh4": {
       "type": "slideshow",
       "blocks": {
@@ -75,6 +92,7 @@
         "slide_rRJKBh",
         "slide_tLfg7g"
       ],
+      "disabled": true,
       "settings": {
         "layout": "full_bleed",
         "slide_height": "adapt_image",
@@ -299,6 +317,7 @@
     }
   },
   "order": [
+    "image_banner_mmDwbL",
     "slideshow_WMCqh4",
     "image_banner_3gjKXG",
     "dynamic_products_web_NaREKM",
