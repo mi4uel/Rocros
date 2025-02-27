@@ -35,7 +35,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/DSC02295.jpg",
-            "image_mobile": "shopify://shop_images/mechero_copia.jpg",
+            "image_mobile": "shopify://shop_images/PUNO_ANILLO_ARREGLADO_V2.jpg",
             "heading": "",
             "heading_size": "h1",
             "subheading": "",
@@ -49,11 +49,31 @@
             "color_scheme": "",
             "text_alignment_mobile": "center"
           }
+        },
+        "slide_tLfg7g": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/DSC02801_e39d5208-8e7e-4dc9-9d2e-e8d6aeebfd55.jpg",
+            "image_mobile": "shopify://shop_images/DSC02801_e39d5208-8e7e-4dc9-9d2e-e8d6aeebfd55.jpg",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "top-center",
+            "show_text_box": false,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "left"
+          }
         }
       },
       "block_order": [
         "slide_AnTNcq",
-        "slide_rRJKBh"
+        "slide_rRJKBh",
+        "slide_tLfg7g"
       ],
       "settings": {
         "layout": "full_bleed",
