@@ -20,3 +20,10 @@
 .related-products .card-information{
   margin-top: .6rem;
 }
+@media screen and (max-width: 749px) {
+  .related-products .grid--2-col-tablet-down .grid__item{
+    width: calc(75% - var(--grid-mobile-horizontal-spacing) / 2);
+    max-width: calc(75% - var(--grid-mobile-horizontal-spacing) / 2);
+  }
+  
+}
