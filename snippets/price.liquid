@@ -27,9 +27,20 @@
   assign money_price_min = price_min | money
   assign money_price_max = price_max | money
   if settings.currency_code_enabled
-    assign money_price = price | money_with_currency
-    assign money_price_min = price_min | money_with_currency
-    assign money_price_max = price_max | money_with_currency
+    if shop.currency == 'USD'
+      assign currency_symbol = '$'
+    elsif shop.currency == 'EUR'
+      assign currency_symbol = '€'
+    elsif shop.currency == 'GBP'
+      assign currency_symbol = '£'
+    else
+      assign currency_symbol = shop.currency
+    endif
+
+    assign money_price = price | divided_by: 100 | append: currency_symbol
+    assign money_price_min = price_min | divided_by: 100 | append: currency_symbol
+    assign money_price_max = price_max | divided_by: 100 | append: currency_symbol
+
   endif
 
   

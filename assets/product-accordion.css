@@ -11,7 +11,7 @@
 
 .faqs .faq .head {
   display: flex;
-  padding: 18px 0px;
+  padding: 1.4rem 0px;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
@@ -28,7 +28,7 @@
   width: 100%;
 }
 .faqs .faq{
-  padding-bottom: 1rem;
+  padding: .6rem 0;
   border-bottom: 1px solid #afafaf;
 }
 .faqs .faq .divider{
