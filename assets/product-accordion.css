@@ -27,14 +27,19 @@
   color: #676D77;
   width: 100%;
 }
+.faqs .faq{
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #afafaf;
+}
+.faqs .faq .divider{
+  border: none;
+}
 
 .faqs .faq .content {
   height: 0px;
   overflow-y: auto;
-  transition: height 0.25s ease-in;
-  border-bottom: 1px solid #afafaf;
-  scrollbar-width: none; 
-  -ms-overflow-style: none;
+  max-height: 30rem;
+  
 }
 
 .faqs .faq .content p {

@@ -191,17 +191,20 @@
   margin: 20px 0;
 }
 
-.cart-drawer__form::-webkit-scrollbar {
+.cart-drawer__form::-webkit-scrollbar,
+.faqs .faq .content::-webkit-scrollbar {
   width: 6px; 
   margin: 10px 0;
 }
 
-.cart-drawer__form::-webkit-scrollbar-thumb {
+.cart-drawer__form::-webkit-scrollbar-thumb,
+.faqs .faq .content::-webkit-scrollbar-thumb {
   background-color: #676D77;
   border-radius: 0; 
 }
 
-.cart-drawer__form::-webkit-scrollbar-track {
+.cart-drawer__form::-webkit-scrollbar-track,
+.faqs .faq .content::-webkit-scrollbar-track {
   background: #DFE1E3;
 }
 
